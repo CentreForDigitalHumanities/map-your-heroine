@@ -1,4 +1,4 @@
-django>=5.2.16
+django>=5.2.17
 djangorestframework
 django-livereload-server
 django-revproxy
