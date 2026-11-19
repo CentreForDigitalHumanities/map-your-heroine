@@ -4,8 +4,7 @@ import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { of } from "rxjs";
 import { BackendService } from "./services/backend.service";
-import { provideHttpClientTesting } from '@angular/common/http/testing'
-import { ChipsModule } from "primeng/chips";
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { AutoCompleteModule } from "primeng/autocomplete";
 import { DialogModule } from "primeng/dialog";
 import { PanelModule } from "primeng/panel";
@@ -31,7 +30,6 @@ class FakeBackend {
         CommonModule,
         NoopAnimationsModule,
         FontAwesomeModule,
-        ChipsModule,
         AutoCompleteModule,
         DialogModule,
         PanelModule,
@@ -44,7 +42,6 @@ class FakeBackend {
         CommonModule,
         NoopAnimationsModule,
         FontAwesomeModule,
-        ChipsModule,
         AutoCompleteModule,
         DialogModule,
         PanelModule,

@@ -30,7 +30,7 @@
                         },
                         "index": "src/index.html",
                         "polyfills": [
-                          "src/polyfills.ts",
+                          "zone.js",
                           "@angular/localize/init"
                         ],
                         "tsConfig": "tsconfig.app.json",
@@ -65,7 +65,7 @@
                             "budgets": [
                                 {
                                     "type": "initial",
-                                    "maximumWarning": "2mb",
+                                    "maximumWarning": "4mb",
                                     "maximumError": "5mb"
                                 },
                                 {
@@ -137,7 +137,10 @@
                     "builder": "@angular/build:karma",
                     "options": {
                         "main": "src/test.ts",
-                        "polyfills": "src/polyfills.ts",
+                        "polyfills": [
+                          "zone.js",
+                          "@angular/localize/init"
+                        ],
                         "tsConfig": "tsconfig.spec.json",
                         "karmaConfig": "karma.conf.js",
                         "assets": [
@@ -153,7 +156,8 @@
         }
     },
     "cli": {
-        "packageManager": "yarn"
+        "packageManager": "yarn",
+        "analytics": false
     },
     "schematics": {
       "@schematics/angular:component": {

@@ -3,8 +3,7 @@ from visualisations.plotting import Plots
 from factual.models import Work, Hero, Response
 
 
-@pytest.mark.django_db
-def test_empty_dataset():
+def test_empty_dataset(db):
     plots = Plots.all_plotdata()
     assert plots['n_works'] == 0
     assert plots['n_heroes'] == 0
@@ -12,8 +11,7 @@ def test_empty_dataset():
     assert len(plots) == 3
 
 
-@pytest.mark.django_db
-def test_filters(fake_data):
+def test_filters(db, fake_data):
     # no filters
     plots = Plots.all_plotdata()
     assert plots['n_works'] == len(Work.objects.all())
@@ -37,9 +35,8 @@ def test_filters(fake_data):
     assert plots['n_works'] == 0
 
 
-@pytest.mark.django_db
 @pytest.fixture
-def fake_data():
+def fake_data(db):
     Work.objects.create(
         medium='novel',
         title='A book',
